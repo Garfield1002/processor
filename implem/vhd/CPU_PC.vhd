@@ -160,6 +160,7 @@ begin
             when S_Fetch =>
                 -- IR <- mem_datain
                 cmd.IR_we <= '1';
+                cmd.PC_we <= '1 ';
                 state_d <= S_Decode;
 
             -- when S_Decode =>
@@ -176,9 +177,9 @@ begin
                 if status.IR(6 downto 0) = "0110111" then
                     cmd.TO_PC_Y_sel <= TO_PC_Y_cst_x04;
                     cmd.PC_sel <= PC_from_pc;
-                    cmd.PC_we <= '1';
+                    cmd.PC_we <= '0';
                     state_d <= S_LUI;
-                else
+                    else
                     state_d <= S_Error; -- Pour détecter les ratés du décodage
                 end if;
 
