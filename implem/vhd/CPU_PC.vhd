@@ -106,7 +106,7 @@ begin
         cmd.SHIFTER_Y_sel     <= SHIFTER_Y_ir_sh;   -- Sélection de l'opérande Y sur l'ALU
 
         cmd.RF_we             <= '1';           -- Valide l'écriture dans RF
-        cmd.RF_SIZE_sel       <= RE_SIZE_word;  -- Self descrptive
+        cmd.RF_SIZE_sel       <= RF_SIZE_word;  -- Self descrptive
         cmd.RF_SIGN_enable    <= '0';
         cmd.DATA_sel          <= DATA_from_alu; -- Sélection de la provenance de la donnée à écrire dans le banc de registres
 
@@ -119,7 +119,7 @@ begin
         cmd.TO_PC_Y_sel       <= TO_PC_Y_cst_x04;   -- Sélection de l'opérande Y sur l'additionneur du PC
 
         cmd.AD_we             <= '1';           -- Valide l'écriture dans AD ?
-        cmd.AD_Y_sel          <= ADD_Y_immI;    -- Sélection de l'opérande Y sur l'additionneur d'AD
+        cmd.AD_Y_sel          <= AD_Y_immI;    -- Sélection de l'opérande Y sur l'additionneur d'AD
 
         cmd.IR_we             <= '1';   -- Valide l'écriture dans IR
 
