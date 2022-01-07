@@ -97,7 +97,7 @@ begin
     begin
 
         -- Valeurs par défaut de cmd à définir selon les préférences de chacun
-        cmd.rst               <= 'U';
+        cmd.rst               <= '1';   -- Reset ?
         cmd.ALU_op            <= UNDEFINED;
         cmd.LOGICAL_op        <= UNDEFINED;
         cmd.ALU_Y_sel         <= UNDEFINED;
