@@ -102,7 +102,7 @@ begin
         cmd.LOGICAL_op        <= LOGICAL_and;   -- Sélection de l'opération logique effectuée par l'ALU
         cmd.ALU_Y_sel         <= ALU_Y_immI;    -- Sélection de l'opérande Y sur l'ALU
 
-        cmd.SHIFTER_op        <= SHIFT_ll;          -- Sélection de l'opération shift effectuée par l'ALU
+        cmd.SHIFTER_op        <= SHIFT_rl;          -- Sélection de l'opération shift effectuée par l'ALU
         cmd.SHIFTER_Y_sel     <= SHIFTER_Y_ir_sh;   -- Sélection de l'opérande Y sur l'ALU
 
         cmd.RF_we             <= '1';           -- Valide l'écriture dans RF
