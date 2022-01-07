@@ -111,7 +111,7 @@ begin
         cmd.DATA_sel          <= UNDEFINED;
 
         cmd.PC_we             <= '1';
-        cmd.PC_sel            <= '0';
+        cmd.PC_sel            <= UNDEFINED;
 
         cmd.PC_X_sel          <= UNDEFINED;
         cmd.PC_Y_sel          <= UNDEFINED;
