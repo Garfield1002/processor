@@ -127,16 +127,18 @@ begin
         cmd.mem_we            <= '1';           -- Valide une écriture dans la mémoire
         cmd.mem_ce            <= '1';           -- Valide une transaction dans la mémoire (r/w)
 
-        cmd_cs.CSR_we         <= CSR_none;      -- Valide l'écriture sur l'un des registres de contrôle/statut
+        -- IGNORE
+            cmd_cs.CSR_we         <= UNDEFINED;      -- Valide l'écriture sur l'un des registres de contrôle/statut
 
-        cmd_cs.TO_CSR_sel     <= TO_CSR_from_imm;   -- Sélection de la provenance de la donnée à écrire dans l'un des registres de contrôle/statut
-        cmd_cs.CSR_sel        <= CSR_from_mip;      -- Sélection du registre de contrôle/statut à envoyer au banc de registre
-        cmd_cs.MEPC_sel       <= MEPC_from_pc;      -- Sélection de la provenance de la donnée à écrire dans le registre mepc
+            cmd_cs.TO_CSR_sel     <= UNDEFINED;   -- Sélection de la provenance de la donnée à écrire dans l'un des registres de contrôle/statut
+            cmd_cs.CSR_sel        <= UNDEFINED;      -- Sélection du registre de contrôle/statut à envoyer au banc de registre
+            cmd_cs.MEPC_sel       <= UNDEFINED;      -- Sélection de la provenance de la donnée à écrire dans le registre mepc
 
-        cmd_cs.MSTATUS_mie_set   <= '1';    -- WWTF
-        cmd_cs.MSTATUS_mie_reset <= '0';    -- WWWTF
+            cmd_cs.MSTATUS_mie_set   <= 'U';    -- WWTF
+            cmd_cs.MSTATUS_mie_reset <= 'U';    -- WWWTF
 
-        cmd_cs.CSR_WRITE_mode    <= WRITE_mode_simple; -- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            cmd_cs.CSR_WRITE_mode    <= UNDEFINED; -- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        -- Stop Ignoring
 
         state_d <= state_q;
 
