@@ -98,34 +98,34 @@ begin
 
         -- Valeurs par défaut de cmd à définir selon les préférences de chacun
         cmd.rst               <= '1';   -- Reset ?
-        cmd.ALU_op            <= UNDEFINED;
-        cmd.LOGICAL_op        <= UNDEFINED;
-        cmd.ALU_Y_sel         <= UNDEFINED;
+        cmd.ALU_op            <= ALU_plus;      -- Sélection de l'opération arithmétique effectuée par l'ALU
+        cmd.LOGICAL_op        <= LOGICAL_and;   -- Sélection de l'opération logique effectuée par l'ALU
+        cmd.ALU_Y_sel         <= ALU_Y_immI;    -- Sélection de l'opérande Y sur l'ALU
 
-        cmd.SHIFTER_op        <= UNDEFINED;
-        cmd.SHIFTER_Y_sel     <= UNDEFINED;
+        cmd.SHIFTER_op        <= SHIFT_ll;          -- Sélection de l'opération shift effectuée par l'ALU
+        cmd.SHIFTER_Y_sel     <= SHIFTER_Y_ir_sh;   -- Sélection de l'opérande Y sur l'ALU
 
-        cmd.RF_we             <= 'U';
-        cmd.RF_SIZE_sel       <= UNDEFINED;
-        cmd.RF_SIGN_enable    <= 'U';
-        cmd.DATA_sel          <= UNDEFINED;
+        cmd.RF_we             <= '1';           -- Valide l'écriture dans RF
+        cmd.RF_SIZE_sel       <= RE_SIZE_word;  -- Self descrptive
+        cmd.RF_SIGN_enable    <= '0';
+        cmd.DATA_sel          <= DATA_from_alu; -- Sélection de la provenance de la donnée à écrire dans le banc de registres
 
         cmd.PC_we             <= '1';
         cmd.PC_sel            <= PC_rstvec;
 
-        cmd.PC_X_sel          <= UNDEFINED;
-        cmd.PC_Y_sel          <= UNDEFINED;
+        cmd.PC_X_sel          <= PC_X_cst_x00;  -- Sélection de l'opérande X sur l'additionneur vers le banc de registre
+        cmd.PC_Y_sel          <= PC_Y_cst_x04;  -- Sélection de l'opérande Y sur l'additionneur vers le banc de registre
 
-        cmd.TO_PC_Y_sel       <= UNDEFINED;
+        cmd.TO_PC_Y_sel       <= TO_PC_Y_cst_x04;   -- Sélection de l'opérande Y sur l'additionneur du PC
 
-        cmd.AD_we             <= 'U';
-        cmd.AD_Y_sel          <= UNDEFINED;
+        cmd.AD_we             <= '1';           -- Valide l'écriture dans AD ?
+        cmd.AD_Y_sel          <= ADD_Y_immI;    -- Sélection de l'opérande Y sur l'additionneur d'AD
 
         cmd.IR_we             <= '1';   -- Valide l'écriture dans IR
 
-        cmd.ADDR_sel          <= UNDEFINED;
-        cmd.mem_we            <= '1';   -- Valide une écriture dans la mémoire
-        cmd.mem_ce            <= '1';   -- Valide une transaction dans la mémoire (r/w)
+        cmd.ADDR_sel          <= ADDR_from_pc;  -- Sélection de l'adresse vers la mémoire
+        cmd.mem_we            <= '1';           -- Valide une écriture dans la mémoire
+        cmd.mem_ce            <= '1';           -- Valide une transaction dans la mémoire (r/w)
 
         cmd_cs.CSR_we            <= UNDEFINED;
 
