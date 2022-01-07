@@ -121,11 +121,11 @@ begin
         cmd.AD_we             <= 'U';
         cmd.AD_Y_sel          <= UNDEFINED;
 
-        cmd.IR_we             <= 'U';
+        cmd.IR_we             <= '0';   -- Valide l'écriture dans IR
 
         cmd.ADDR_sel          <= UNDEFINED;
-        cmd.mem_we            <= 'U';
-        cmd.mem_ce            <= 'U';
+        cmd.mem_we            <= '0';   -- Valide une écriture dans la mémoire
+        cmd.mem_ce            <= '0';   -- Valide une transaction dans la mémoire (r/w)
 
         cmd_cs.CSR_we            <= UNDEFINED;
 
