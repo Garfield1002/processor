@@ -113,8 +113,8 @@ begin
         cmd.PC_we             <= 'U';
         cmd.PC_sel            <= UNDEFINED;
 
-        cmd.PC_X_sel          <= 0; -- UNDEFINED
-        cmd.PC_Y_sel          <= 0; -- UNDEFINED
+        cmd.PC_X_sel          <= '0'; -- UNDEFINED
+        cmd.PC_Y_sel          <= '0'; -- UNDEFINED
 
         cmd.TO_PC_Y_sel       <= UNDEFINED;
 
