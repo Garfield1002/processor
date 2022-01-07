@@ -37,7 +37,7 @@ package PKG is
         UNDEFINED
     );
     type ALU_Y_select is   (
-        ALU_Y_immI,   
+        ALU_Y_immI,
         ALU_Y_rf_rs2,
         UNDEFINED
     );
@@ -49,7 +49,7 @@ package PKG is
         UNDEFINED
     );
     type SHIFTER_Y_select is   (
-        SHIFTER_Y_ir_sh,   
+        SHIFTER_Y_ir_sh,
         SHIFTER_Y_rs2,
         UNDEFINED
     );
@@ -72,7 +72,7 @@ package PKG is
     );
 
     type AD_Y_select is   (
-        AD_Y_immI,   
+        AD_Y_immI,
         AD_Y_immS,
         UNDEFINED
     );
@@ -103,7 +103,7 @@ package PKG is
         TO_PC_Y_cst_x04,
         UNDEFINED
     );
-                    
+
     type ADDR_select is (
         ADDR_from_pc,
         ADDR_from_ad,
