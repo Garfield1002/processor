@@ -160,7 +160,7 @@ begin
             when S_Fetch =>
                 -- IR <- mem_datain
                 cmd.IR_we <= '1';
-                cmd.PC_we <= '1 ';
+                cmd.PC_we <= '1';
                 state_d <= S_Decode;
 
             -- when S_Decode =>
