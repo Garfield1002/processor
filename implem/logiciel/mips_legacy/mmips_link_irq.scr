@@ -1,0 +1,16 @@
+SECTIONS {
+
+    /* Reset Vector */
+    . = 0x80000000;
+    .text  : { *(__start) }
+    .text  : { *(.text) }
+    .data  : { *(.data) }
+    .sdata : { *(.sdata) }
+    _edata = . ;
+    .bss : { *(.bss) }
+
+    /* Interrupt Vector */
+    . = 0x80001FFC;
+    .irq_vec : { *(.irq_vec) }
+
+}

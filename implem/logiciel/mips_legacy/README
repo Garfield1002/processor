@@ -1,0 +1,22 @@
+README
+A N'UTILISER QU'EN FIN DE PROJET, ECRIRE LES PROGRAMMES DE TESTS ELEMENTAIRES DIRECTEMENT EN ASSEMBLEUR !!!!
+
+Petits utilitaires pour compiler des programmes .c à destination du MIPS
+
+A l'appel du makefile, spécifier si on gère les interruptions ou non :
+
+ make <cible> IRQ_FLAG=irq/no_irq
+
+ IRQ_FLAG=irq  ou no_irq pour valider/invalider l'utilisation d'IRQs
+par défaut IRQ_FLAG=no_irq
+
+exemple:
+make test_irq.elf IRQ_FLAG=irq
+make mips_invader_zybo.elf
+
+Le make copie le fichier elf dans le répertoire ../program
+Il ne reste plus qu'a lancer la programmation sur carte
+exemple
+cd ..
+source /Xilinx/env-14.7.sh
+make run_fpga TOP=MMIPS_complet PROG=mips_invader_zybo

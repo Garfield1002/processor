@@ -1,0 +1,29 @@
+cdc/*.aux
+cdc/*.pdf
+cdc/*.log
+cdc_mips/*.log
+implem/log
+implem/.CEPcache/
+*.log
+*.jou
+implem/autotest.res
+implem/tag.res
+implem/tag.res.sav
+implem/mutants.res
+implem/.tmp_seq
+implem/.tmp_res
+implem/vhdPointDeDepart/
+implem/evaluation/
+*.mutseq
+*.mutres
+*.swp
+public/*.svg
+public/mutants/*.svg
+*.swo
+*~
+*#
+<<<<<<< HEAD
+=======
+implem/Test_synthese/
+implem/*.str
+>>>>>>> interruptions
