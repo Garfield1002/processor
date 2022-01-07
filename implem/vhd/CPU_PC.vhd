@@ -177,7 +177,7 @@ begin
                     cmd.TO_PC_Y_sel <= TO_PC_Y_cst_x04;
                     cmd.PC_sel <= PC_from_pc;
                     cmd.IR_we <= '0';
-                    cmd.PC_we <= '1 ';
+                    cmd.PC_we <= '1';
                     state_d <= S_LUI;
                     else
                     state_d <= S_Error; -- Pour détecter les ratés du décodage
