@@ -110,8 +110,8 @@ begin
         cmd.RF_SIGN_enable    <= 'U';
         cmd.DATA_sel          <= UNDEFINED;
 
-        cmd.PC_we             <= 'U';
-        cmd.PC_sel            <= UNDEFINED;
+        cmd.PC_we             <= '1';
+        cmd.PC_sel            <= '0';
 
         cmd.PC_X_sel          <= UNDEFINED;
         cmd.PC_Y_sel          <= UNDEFINED;
@@ -121,11 +121,11 @@ begin
         cmd.AD_we             <= 'U';
         cmd.AD_Y_sel          <= UNDEFINED;
 
-        cmd.IR_we             <= '0';   -- Valide l'écriture dans IR
+        cmd.IR_we             <= '1';   -- Valide l'écriture dans IR
 
         cmd.ADDR_sel          <= UNDEFINED;
-        cmd.mem_we            <= '0';   -- Valide une écriture dans la mémoire
-        cmd.mem_ce            <= '0';   -- Valide une transaction dans la mémoire (r/w)
+        cmd.mem_we            <= '1';   -- Valide une écriture dans la mémoire
+        cmd.mem_ce            <= '1';   -- Valide une transaction dans la mémoire (r/w)
 
         cmd_cs.CSR_we            <= UNDEFINED;
 
